@@ -28,25 +28,8 @@ let containers = all.filter(x => x.type === 'object' && x.name === 'Container');
 // let self      = all.find(x => x.name === 'self');
 // let app       = all.find(x => x.name === 'MyBundledApp');
 
-function pathToRoot(node, visited = new WeakSet(), fromEdge) {
-  if (visited.has(node)) { return; }
-  visited.add(node);
-
-  let from = fromEdge ? fromEdge.from : node
-
-  if (node.index === 0) { return [node.name || 'root']; }
-
-  for (let edge of node.in) {
-    if (edge.type === 'weak') { continue; }
-    let path = pathToRoot(edge.from, visited, edge);
-    if (path) {
-      return [from].concat(path);
-    }
-  }
-}
-
 let ignored = [];
-
+const pathToRoot = require('../lib/path-to-root');
 console.log('testing');
 
 let visited = new WeakSet()
