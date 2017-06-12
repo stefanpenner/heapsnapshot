@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "main": "index.js",
   "license": "MIT",
+  "repository": "https://github.com/stefanpenner/heapsnapshot.git",
   "files": [
     "index.js",
     "lib"
