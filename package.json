@@ -4,8 +4,15 @@
   "main": "index.js",
   "license": "MIT",
   "repository": "https://github.com/stefanpenner/heapsnapshot.git",
+  "scripts": {
+    "test": "mocha tests"
+  },
   "files": [
     "index.js",
     "lib"
-  ]
+  ],
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "mocha": "^3.4.2"
+  }
 }
