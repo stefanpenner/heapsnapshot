@@ -14,7 +14,7 @@ const Heapsnapshot = require('heapsnapshot');
 const snapshot = Heapsnapshot.fromFileSync(__dirname + '/container.heapsnapshot');
 
 // TODO: iterate for building (so we can do it eventually incrementally)
-snapshot.buildSync(); // alteratnively build() is a generator, which allows for incremental building.
+snapshot.buildSync(); // alternatively build() is a generator, which allows for incremental building.
 
 // get all nodes
 const nodes = [...snapshot.nodeIterator()];
