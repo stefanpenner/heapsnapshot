@@ -26,3 +26,22 @@ let path = Heapsnapshot.pathToRoot(containers[0]);
 console.log(path.join(' -> '));
 // => <Container:622248> -> <Class:140976> -> <Window / http://localhost:4200:13800> -> root
 ```
+
+
+### Stuff
+
+#### Node
+
+```js
+node.in // => array in in-bound edges
+node.out // => array in in-bound edges
+node.toString() // => "<Container: 622248>"
+```
+
+#### Edge
+
+```js
+edge.to // => node the edge points to
+edge.from // => node the edge comes from
+edge.toString() // => "<name: from(Container: 622248) to ((map descriptors): 625980)"
+```
