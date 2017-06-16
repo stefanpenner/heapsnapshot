@@ -1,5 +1,7 @@
 # heapsnapshot
 
+[![Build Status](https://travis-ci.org/stefanpenner/heapsnapshot.svg?branch=master)](https://travis-ci.org/stefanpenner/heapsnapshot)
+
 usage:
 
 * `yarn add heapsnapshot`
