@@ -1,12 +1,14 @@
 # heapsnapshot
-
 [![Build Status](https://travis-ci.org/stefanpenner/heapsnapshot.svg?branch=master)](https://travis-ci.org/stefanpenner/heapsnapshot)
 
-usage:
+A Programmatic API for a heapsnapshot.
 
+Currently supports dumps from:
+* chrome/v8
+
+usage:
 * `yarn add heapsnapshot`
 * `npm install heapsnapshot`
-
 
 ```js
 
