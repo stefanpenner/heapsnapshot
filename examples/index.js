@@ -36,6 +36,7 @@ let visited = new WeakSet()
 let path;
 let count = 0;
 while(path = pathToRoot(containers[0], visited)) {
+  if (path.length < 2) { continue; }
   count++;
   visited = new WeakSet()
   ignored.push(path[1]);
