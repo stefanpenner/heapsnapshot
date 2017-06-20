@@ -16,7 +16,7 @@ const snapshot = Heapsnapshot.fromFileSync(__dirname + '/container.heapsnapshot'
 
 // build
 console.log('building');
-for (let _ of snapshot.build()) { }
+snapshot.buildSync();
 
 console.log('all')
 let all = [...snapshot.nodeIterator()];
