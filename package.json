@@ -5,7 +5,8 @@
   "license": "MIT",
   "repository": "https://github.com/stefanpenner/heapsnapshot.git",
   "scripts": {
-    "test": "mocha tests"
+    "test": "mocha tests",
+    "test:debug": "mocha debug tests"
   },
   "files": [
     "index.js",
