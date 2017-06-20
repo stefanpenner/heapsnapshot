@@ -10,8 +10,9 @@ usage:
 * `yarn add heapsnapshot`
 * `npm install heapsnapshot`
 
-```js
+heaps can be quite large, and this library isn't terribly efficient yet so at times you may need to run with note with `node --max_old_space_size=4096 <script-name>`
 
+```js
 const Heapsnapshot = require('heapsnapshot');
 const snapshot = Heapsnapshot.fromFileSync(__dirname + '/container.heapsnapshot');
 
