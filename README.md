@@ -16,9 +16,6 @@ heaps can be quite large, and this library isn't terribly efficient yet so at ti
 const Heapsnapshot = require('heapsnapshot');
 const snapshot = Heapsnapshot.fromFileSync(__dirname + '/container.heapsnapshot');
 
-// TODO: iterate for building (so we can do it eventually incrementally)
-snapshot.buildSync(); // alternatively build() is a generator, which allows for incremental building.
-
 // get all nodes
 const nodes = [...snapshot];
 const containers = nodes.filter(x => x.type === 'object' && x.name === 'Container');
@@ -33,10 +30,7 @@ or if you can use `for .. of`:
 const Heapsnapshot = require('heapsnapshot');
 const snapshot = Heapsnapshot.fromFileSync(__dirname + '/container.heapsnapshot');
 
-// TODO: iterate for building (so we can do it eventually incrementally)
-snapshot.buildSync(); // alternatively build() is a generator, which allows for incremental building.
-
-// get all nodes
+// loop through all nodes
 for (const node of snapshot) {
   if (node.type === 'object' && node.name === 'Container') {
     const path = Heapsnapshot.pathToRoot(node);
