@@ -12,7 +12,6 @@ describe('Heapsnapshot', function() {
 
   before(function() {
     small = Heapsnapshot.fromFileSync(EXAMPLE_PATH  + "/small.heapsnapshot")
-    small.buildSync();
   });
 
   describe('fromFileSync', function() {

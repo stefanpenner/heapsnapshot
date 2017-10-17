@@ -14,31 +14,26 @@ function rank(node, value = 0) {
 console.log('reading');
 const snapshot = Heapsnapshot.fromFileSync(__dirname + '/container.heapsnapshot');
 
-// build
-console.log('building');
-snapshot.buildSync();
-
-console.log('all')
-let all = [...snapshot.nodeIterator()];
+console.log('all');
+let all = [...snapshot];
 // let allEdges = [...snapshot.edgeIterator()];
 
-console.log('searching...')
+console.log('searching...');
 let containers = all.filter(x => x.type === 'object' && x.name === 'Container');
 // let container = all.find(x => x.name === '__container__');
 // let self      = all.find(x => x.name === 'self');
 // let app       = all.find(x => x.name === 'MyBundledApp');
 
 let ignored = [];
-const pathToRoot = require('../lib/path-to-root');
 console.log('testing');
 
-let visited = new WeakSet()
+let visited = new WeakSet();
 let path;
 let count = 0;
-while(path = pathToRoot(containers[0], visited)) {
+while(path = Heapsnapshot.pathToRoot(containers[0], visited)) {
   if (path.length < 2) { continue; }
   count++;
-  visited = new WeakSet()
+  visited = new WeakSet();
   ignored.push(path[1]);
   ignored.forEach(node => visited.add(node))
   console.log(`path ${count}:`, path.join(' -> '));
